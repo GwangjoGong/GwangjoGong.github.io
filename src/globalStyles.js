@@ -39,7 +39,11 @@ const globalStyle = createGlobalStyle`
 }
 
 body {
-  font-family: 'Noto Sans CJK KR'
+  font-family: 'Noto Sans CJK KR';
+}
+
+* {
+  box-sizing: border-box;
 }
 `
 
