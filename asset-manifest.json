@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/dwc05101.github.io/static/js/main.3a540d5b.chunk.js",
-    "main.js.map": "/dwc05101.github.io/static/js/main.3a540d5b.chunk.js.map",
+    "main.js": "/dwc05101.github.io/static/js/main.293d6d67.chunk.js",
+    "main.js.map": "/dwc05101.github.io/static/js/main.293d6d67.chunk.js.map",
     "runtime-main.js": "/dwc05101.github.io/static/js/runtime-main.17e3db6f.js",
     "runtime-main.js.map": "/dwc05101.github.io/static/js/runtime-main.17e3db6f.js.map",
     "static/css/2.b00201c5.chunk.css": "/dwc05101.github.io/static/css/2.b00201c5.chunk.css",
-    "static/js/2.bdcadb75.chunk.js": "/dwc05101.github.io/static/js/2.bdcadb75.chunk.js",
-    "static/js/2.bdcadb75.chunk.js.map": "/dwc05101.github.io/static/js/2.bdcadb75.chunk.js.map",
+    "static/js/2.0e125690.chunk.js": "/dwc05101.github.io/static/js/2.0e125690.chunk.js",
+    "static/js/2.0e125690.chunk.js.map": "/dwc05101.github.io/static/js/2.0e125690.chunk.js.map",
     "index.html": "/dwc05101.github.io/index.html",
     "static/css/2.b00201c5.chunk.css.map": "/dwc05101.github.io/static/css/2.b00201c5.chunk.css.map",
-    "static/js/2.bdcadb75.chunk.js.LICENSE.txt": "/dwc05101.github.io/static/js/2.bdcadb75.chunk.js.LICENSE.txt",
+    "static/js/2.0e125690.chunk.js.LICENSE.txt": "/dwc05101.github.io/static/js/2.0e125690.chunk.js.LICENSE.txt",
     "static/media/backdrop.5c28eb62.jpg": "/dwc05101.github.io/static/media/backdrop.5c28eb62.jpg",
     "static/media/bigsur.fd3bb707.png": "/dwc05101.github.io/static/media/bigsur.fd3bb707.png",
     "static/media/chrome_icon.5f49939c.png": "/dwc05101.github.io/static/media/chrome_icon.5f49939c.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.17e3db6f.js",
     "static/css/2.b00201c5.chunk.css",
-    "static/js/2.bdcadb75.chunk.js",
-    "static/js/main.3a540d5b.chunk.js"
+    "static/js/2.0e125690.chunk.js",
+    "static/js/main.293d6d67.chunk.js"
   ]
 }
