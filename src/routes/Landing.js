@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import backdrop from '../assets/backdrop.jpg'
 import bigsur from '../assets/bigsur.png'
@@ -44,14 +45,9 @@ const Screen = styled.div`
 
   & h4 {
     margin-top: 30px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     color: white;
-  }
-
-  & span {
-    font-size: 18px;
-    margin-top: 20px;
   }
 `
 
@@ -74,9 +70,13 @@ const Action = styled.div`
 
 const Home = () => {
   const [scale, setScale] = useState(1)
+  const history = useHistory()
 
   const onScroll = () => {
     const percentage = getVerticalScrollPercentage(document.body)
+    if (percentage === 100) {
+      history.push('/home')
+    }
     setScale(1 + percentage / 100)
   }
 
