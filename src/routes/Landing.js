@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import Typing from 'react-typing-animation'
 import styled from 'styled-components'
 import backdrop from '../assets/backdrop.jpg'
+import bigsur from '../assets/bigsur.png'
 
 const Container = styled.div`
   width: 100vw;
@@ -24,23 +24,52 @@ const Content = styled.div`
 `
 
 const Screen = styled.div`
-  width: 844px;
-  height: 493px;
-  background-color: white;
+  width: 850px;
+  height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(${bigsur});
+  background-size: cover;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  & h1 {
-    font-size: 48px;
-    font-weight: bold;
+  & img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  & h4 {
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
   }
 
   & span {
     font-size: 18px;
     margin-top: 20px;
   }
+`
+
+const Action = styled.div`
+  width: 140px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: rgb(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+
+  opacity: ${(props) => (props.visible ? '1' : '0')};
+
+  transition: 0.3s ease-in-out;
 `
 
 const Home = () => {
@@ -72,12 +101,11 @@ const Home = () => {
   return (
     <Container>
       <Content scale={scale}>
-        <Typing>
-          <Screen>
-            <h1>Gwangjo Gong</h1>
-            <span>Scroll down to continue...</span>
-          </Screen>
-        </Typing>
+        <Screen>
+          <img src='https://github.com/dwc05101.png' alt='avatar' />
+          <h4>Gwangjo Gong</h4>
+          <Action visible={scale <= 1.9}>Scroll down to continue...</Action>
+        </Screen>
       </Content>
     </Container>
   )
