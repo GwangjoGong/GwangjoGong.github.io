@@ -14,6 +14,8 @@ import {
   SearchOutlined,
   MenuOutlined
 } from '@ant-design/icons'
+import Window from '../components/Window'
+import Terminal from '../components/Terminal'
 
 const Container = styled.div`
   width: 100vw;
@@ -24,6 +26,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `
 
 const LoadingScreen = styled.div`
@@ -121,6 +124,9 @@ const Dock = styled.div`
   align-items: center;
   padding: 10px 5px;
   margin-top: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
 `
 
 const DockIcon = styled.div`
@@ -148,6 +154,7 @@ const antIcon = (
 
 const Home = () => {
   const [loading, setLoading] = useState(true)
+  const [showTerm, setShowTerm] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
@@ -182,14 +189,29 @@ const Home = () => {
           <MenuOutlined style={{ color: 'white', fontSize: 18 }} />
         </Option>
       </Header>
-
+      {showTerm && (
+        <Window
+          title='GwangjoGong — dwc05101@kaist.ac.kr— ~ — -zsh — 89*27'
+          top={100}
+          left={100}
+          close={() => {
+            setShowTerm(false)
+          }}>
+          <Terminal />
+        </Window>
+      )}
       <Dock>
         <DockIcon url={chrome} />
         <DockIcon url={mail} />
         <DockIcon url={message} />
         <DockIcon url={note} />
         <DockDivider />
-        <DockIcon url={terminal} />
+        <DockIcon
+          url={terminal}
+          onClick={() => {
+            setShowTerm(true)
+          }}
+        />
       </Dock>
       <LoadingScreen loading={loading.toString()}>
         <img src='https://github.com/dwc05101.png' alt='avatar' />
