@@ -44,27 +44,26 @@ const Screen = styled.div`
   }
 
   & h4 {
-    margin-top: 30px;
-    font-size: 12px;
+    margin-top: 20px;
+    font-size: 11px;
     font-weight: 500;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
   }
 `
 
 const Action = styled.div`
   width: 140px;
-  height: 26px;
+  height: 24px;
   border-radius: 13px;
   background-color: rgb(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.5);
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 10px;
 
   opacity: ${(props) => (props.visible ? '1' : '0')};
-
   transition: 0.3s ease-in-out;
 `
 
