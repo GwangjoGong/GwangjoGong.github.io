@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import bigsur from '../assets/bigsur.png'
 import chrome from '../assets/chrome_icon.png'
 import mail from '../assets/mail_icon.png'
-import message from '../assets/message_icon.png'
-import note from '../assets/note_icon.png'
 import terminal from '../assets/term_icon.png'
 import photo from '../assets/photo_icon.png'
 import { Spin } from 'antd'
@@ -260,7 +258,6 @@ const Home = () => {
       <Dock>
         <DockIcon url={chrome} />
         <DockIcon url={mail} />
-        <DockIcon url={message} />
         <DockIcon
           url={photo}
           onClick={() => {
