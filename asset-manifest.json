@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/dwc05101.github.io/static/js/main.dd8f8b94.chunk.js",
-    "main.js.map": "/dwc05101.github.io/static/js/main.dd8f8b94.chunk.js.map",
+    "main.js": "/dwc05101.github.io/static/js/main.5fb9e057.chunk.js",
+    "main.js.map": "/dwc05101.github.io/static/js/main.5fb9e057.chunk.js.map",
     "runtime-main.js": "/dwc05101.github.io/static/js/runtime-main.17e3db6f.js",
     "runtime-main.js.map": "/dwc05101.github.io/static/js/runtime-main.17e3db6f.js.map",
     "static/css/2.b00201c5.chunk.css": "/dwc05101.github.io/static/css/2.b00201c5.chunk.css",
@@ -12,15 +12,15 @@
     "static/js/2.b0506ab6.chunk.js.LICENSE.txt": "/dwc05101.github.io/static/js/2.b0506ab6.chunk.js.LICENSE.txt",
     "static/media/backdrop.5c28eb62.jpg": "/dwc05101.github.io/static/media/backdrop.5c28eb62.jpg",
     "static/media/bigsur.fd3bb707.png": "/dwc05101.github.io/static/media/bigsur.fd3bb707.png",
-    "static/media/mail_icon.c71b44cb.png": "/dwc05101.github.io/static/media/mail_icon.c71b44cb.png",
-    "static/media/photo_icon.519074fa.png": "/dwc05101.github.io/static/media/photo_icon.519074fa.png",
-    "static/media/safari_icon.2062f57c.png": "/dwc05101.github.io/static/media/safari_icon.2062f57c.png",
+    "static/media/mail_icon.2f61bf2c.png": "/dwc05101.github.io/static/media/mail_icon.2f61bf2c.png",
+    "static/media/photo_icon.3338d6bf.png": "/dwc05101.github.io/static/media/photo_icon.3338d6bf.png",
+    "static/media/safari_icon.304aa9e3.png": "/dwc05101.github.io/static/media/safari_icon.304aa9e3.png",
     "static/media/term_icon.7511de2b.png": "/dwc05101.github.io/static/media/term_icon.7511de2b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.17e3db6f.js",
     "static/css/2.b00201c5.chunk.css",
     "static/js/2.b0506ab6.chunk.js",
-    "static/js/main.dd8f8b94.chunk.js"
+    "static/js/main.5fb9e057.chunk.js"
   ]
 }
