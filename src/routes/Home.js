@@ -47,7 +47,7 @@ const LoadingScreen = styled.div`
   background-position: center center;
 
   opacity: ${(props) => (props.loading === 'true' ? '1' : '0')};
-  z-index: ${(props) => (props.loading === 'true' ? '1' : '-1')};
+  z-index: ${(props) => (props.loading === 'true' ? '1001' : '-1')};
   img {
     width: 200px;
     height: 200px;
@@ -116,6 +116,12 @@ const Option = styled.button`
   }
 `
 
+const Screen = styled.div`
+  width: 100%;
+  flex: 1;
+  position: relative;
+`
+
 const Dock = styled.div`
   height: 90px;
   border-radius: 10px;
@@ -124,9 +130,24 @@ const Dock = styled.div`
   align-items: center;
   padding: 10px 5px;
   margin-top: auto;
+  z-index: 1000;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
     0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
     0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+`
+
+const DockTooltip = styled.div`
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  opacity: 0;
 `
 
 const DockIcon = styled.div`
@@ -136,6 +157,26 @@ const DockIcon = styled.div`
   background-size: cover;
   background-position: center center;
   margin: 0 5px;
+  position: relative;
+
+  &:hover {
+    ${DockTooltip} {
+      opacity: 1;
+    }
+  }
+`
+
+const DockDot = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: black;
+  opacity: ${(props) => (props.show === 'true' ? '1' : '0')};
+  transition: 0.3s ease-in-out;
 `
 
 const DockDivider = styled.div`
@@ -189,17 +230,19 @@ const Home = () => {
           <MenuOutlined style={{ color: 'white', fontSize: 18 }} />
         </Option>
       </Header>
-      {showTerm && (
-        <Window
-          title='GwangjoGong — dwc05101@kaist.ac.kr— ~ — -zsh — 89*27'
-          top={100}
-          left={100}
-          close={() => {
-            setShowTerm(false)
-          }}>
-          <Terminal />
-        </Window>
-      )}
+      <Screen>
+        {showTerm && (
+          <Window
+            title='GwangjoGong — dwc05101@kaist.ac.kr— ~ — -zsh — 89*27'
+            top={100}
+            left={100}
+            close={() => {
+              setShowTerm(false)
+            }}>
+            <Terminal />
+          </Window>
+        )}
+      </Screen>
       <Dock>
         <DockIcon url={chrome} />
         <DockIcon url={mail} />
@@ -210,8 +253,10 @@ const Home = () => {
           url={terminal}
           onClick={() => {
             setShowTerm(true)
-          }}
-        />
+          }}>
+          <DockTooltip>Terminal</DockTooltip>
+          <DockDot show={showTerm.toString()} />
+        </DockIcon>
       </Dock>
       <LoadingScreen loading={loading.toString()}>
         <img src='https://github.com/dwc05101.png' alt='avatar' />
