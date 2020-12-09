@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import bigsur from '../assets/bigsur.png'
-import chrome from '../assets/chrome_icon.png'
+import safari from '../assets/safari_icon.png'
 import mail from '../assets/mail_icon.png'
 import terminal from '../assets/term_icon.png'
 import photo from '../assets/photo_icon.png'
@@ -195,8 +195,8 @@ const antIcon = (
 
 const Home = () => {
   const [loading, setLoading] = useState(true)
-  const [showTerm, setShowTerm] = useState(true)
-  const [showPhoto, setShowPhoto] = useState(true)
+  const [showTerm, setShowTerm] = useState(false)
+  const [showPhoto, setShowPhoto] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -256,8 +256,12 @@ const Home = () => {
         )}
       </Screen>
       <Dock>
-        <DockIcon url={chrome} />
-        <DockIcon url={mail} />
+        <DockIcon url={safari} onClick={() => {}}>
+          <DockTooltip>Safari</DockTooltip>
+        </DockIcon>
+        <DockIcon url={mail} onClick={() => {}}>
+          <DockTooltip>Mail</DockTooltip>
+        </DockIcon>
         <DockIcon
           url={photo}
           onClick={() => {
