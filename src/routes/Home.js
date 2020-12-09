@@ -180,7 +180,7 @@ const DockDot = styled.div`
 `
 
 const DockDivider = styled.div`
-  height: 100%;
+  height: calc(100% - 20px);
   width: 1px;
   background: rgba(0, 0, 0, 0.3);
   margin: 0 10px;
