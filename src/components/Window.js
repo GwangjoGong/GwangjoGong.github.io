@@ -13,6 +13,7 @@ const Container = styled.div`
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
     0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
     0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  border: 1px solid #d1d1d6;
 `
 
 const Header = styled.div`
@@ -26,6 +27,7 @@ const Header = styled.div`
   cursor: move;
   padding: 0 5px;
   font-size: 10px;
+  border-bottom: 1px solid #d1d1d6;
 `
 
 const ActionWrapper = styled.div`

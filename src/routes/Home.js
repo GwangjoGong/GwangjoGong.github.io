@@ -6,6 +6,7 @@ import mail from '../assets/mail_icon.png'
 import message from '../assets/message_icon.png'
 import note from '../assets/note_icon.png'
 import terminal from '../assets/term_icon.png'
+import photo from '../assets/photo_icon.png'
 import { Spin } from 'antd'
 import {
   GithubFilled,
@@ -16,6 +17,7 @@ import {
 } from '@ant-design/icons'
 import Window from '../components/Window'
 import Terminal from '../components/Terminal'
+import Photo from '../components/Photo'
 
 const Container = styled.div`
   width: 100vw;
@@ -128,7 +130,7 @@ const Dock = styled.div`
   background: rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
-  padding: 10px 5px;
+  padding: 0px 5px;
   margin-top: auto;
   z-index: 1000;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
@@ -170,10 +172,10 @@ const DockDot = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -1px;
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
+  bottom: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
   background: black;
   opacity: ${(props) => (props.show === 'true' ? '1' : '0')};
   transition: 0.3s ease-in-out;
@@ -196,6 +198,7 @@ const antIcon = (
 const Home = () => {
   const [loading, setLoading] = useState(true)
   const [showTerm, setShowTerm] = useState(true)
+  const [showPhoto, setShowPhoto] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
@@ -231,11 +234,22 @@ const Home = () => {
         </Option>
       </Header>
       <Screen>
+        {showPhoto && (
+          <Window
+            title='Photos - Portfolio of me'
+            top={100}
+            left={100}
+            close={() => {
+              setShowPhoto(false)
+            }}>
+            <Photo />
+          </Window>
+        )}
         {showTerm && (
           <Window
             title='GwangjoGong — dwc05101@kaist.ac.kr— ~ — -zsh — 89*27'
-            top={100}
-            left={100}
+            top={120}
+            left={120}
             close={() => {
               setShowTerm(false)
             }}>
@@ -247,7 +261,14 @@ const Home = () => {
         <DockIcon url={chrome} />
         <DockIcon url={mail} />
         <DockIcon url={message} />
-        <DockIcon url={note} />
+        <DockIcon
+          url={photo}
+          onClick={() => {
+            setShowPhoto(true)
+          }}>
+          <DockTooltip>Photos</DockTooltip>
+          <DockDot show={showPhoto.toString()} />
+        </DockIcon>
         <DockDivider />
         <DockIcon
           url={terminal}
